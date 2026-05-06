@@ -1,42 +1,26 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
+    "name": "AI Animation Studio",
+    "slug": "ai-animation-studio",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "frontend",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
+    "splash": {
+      "image": "./assets/images/splash-image.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#05050A"
     },
     "android": {
+      "package": "com.kuda.aianimationstudio",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#000"
+        "backgroundColor": "#05050A"
       },
-      "edgeToEdgeEnabled": true
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "versionCode": 1
     },
     "plugins": [
       "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#000"
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
-    }
+      "expo-secure-store"
+    ]
   }
 }
