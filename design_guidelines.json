@@ -1,0 +1,124 @@
+{
+  "project_name": "AI Animation Studio",
+  "platform": "React Native Expo",
+  "theme_archetype": "Archetype 5: Jewel & Luxury (Dark Theme)",
+  "rationale": "For an AI Animation Studio, the interface must serve as a dark, premium canvas ('theater') that allows the highly saturated, generated video content to pop. We avoid standard SaaS grey, opting for deep midnight blues and slate to create a cinematic, high-end creator-tool aesthetic. Sharp contrasts and structured layouts borrow from pro-editing software (like DaVinci Resolve or After Effects) but simplified for mobile.",
+  "colors": {
+    "background": {
+      "base": "#05050A",
+      "surface": "#121218",
+      "surface_elevated": "#1C1C26",
+      "glass": "rgba(28, 28, 38, 0.7)"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "disabled": "#52525B",
+      "inverse": "#05050A"
+    },
+    "border": {
+      "subtle": "rgba(255, 255, 255, 0.08)",
+      "strong": "rgba(255, 255, 255, 0.2)",
+      "active": "#E11D48"
+    },
+    "brand": {
+      "primary": "#E11D48",
+      "primary_hover": "#BE123C",
+      "accent": "#FACC15"
+    },
+    "status": {
+      "rendering": "#FACC15",
+      "done": "#10B981",
+      "error": "#EF4444",
+      "parsing": "#3B82F6"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Outfit",
+      "body": "Manrope",
+      "mono": "JetBrains Mono"
+    },
+    "sizes": {
+      "h1": { "fontSize": 36, "lineHeight": 40, "letterSpacing": -1 },
+      "h2": { "fontSize": 28, "lineHeight": 34, "letterSpacing": -0.5 },
+      "h3": { "fontSize": 24, "lineHeight": 30, "letterSpacing": -0.5 },
+      "h4": { "fontSize": 18, "lineHeight": 24, "letterSpacing": 0 },
+      "body": { "fontSize": 16, "lineHeight": 24, "letterSpacing": 0 },
+      "small": { "fontSize": 14, "lineHeight": 20, "letterSpacing": 0 },
+      "overline": { "fontSize": 12, "lineHeight": 16, "letterSpacing": 1.5, "textTransform": "uppercase" }
+    }
+  },
+  "spacing_and_layout": {
+    "grid": "Bento Grid mobile interpretation. Avoid symmetric equal squares. Mix full-width hero cards with side-by-side metric cards.",
+    "scale": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "xxl": 48
+    },
+    "containers": "All scrollable views must have pb-32 (padding-bottom: 128px) to account for bottom tabs and FABs. Internal card padding MUST be a generous 24px.",
+    "borders": "Radical sharpness. Use max rounded-md (6px) or completely square corners. NO overly rounded pill shapes for primary cards.",
+    "touch_targets": "Minimum 48x48 pixels for all interactive elements (React Native Accessibility Standard)."
+  },
+  "components": {
+    "buttons": {
+      "primary": "Background: #E11D48, Text: #FFFFFF, Height: 56px, Border-radius: 4px, Font: Outfit SemiBold.",
+      "secondary": "Background: Transparent, Border: 1px solid rgba(255,255,255,0.2), Text: #FFFFFF.",
+      "ghost": "Background: Transparent, Text: #A1A1AA. Active state changes text to #FFFFFF."
+    },
+    "inputs": {
+      "text": "Background: #121218, Border: 1px solid rgba(255,255,255,0.1), Height: 56px, Padding: 16px, Text: #FFFFFF. Focus state: Border changes to #E11D48.",
+      "textarea": "Min-height: 200px, multi-line, identical styling to text input."
+    },
+    "cards": {
+      "default": "Background: #121218, Border: 1px solid rgba(255,255,255,0.08), Padding: 24px.",
+      "interactive": "On press down, scale to 0.98 and increase border opacity to 0.3."
+    },
+    "bottom_tabs": {
+      "style": "Glassmorphism: absolute positioning at bottom, background rgba(18, 18, 24, 0.85), border-top 1px solid rgba(255,255,255,0.05). Use BlurView if available."
+    }
+  },
+  "screens_instructions": {
+    "Auth": "Dark abstract cinematic background image full screen. Overlay black/60 gradient bottom-up. Form sits at bottom 40% of screen. Minimalist inputs. 'AI Animation Studio' in large Outfit font, tracking-tight.",
+    "Dashboard": "Top header with Avatar and 'Welcome'. Horizontal scroll for 'Recent Drafts'. Vertical 'Bento' list for all projects. Project thumbnails must have a dark gradient overlay with title and status badge (e.g., 'Rendering 45%') layered on top. Floating Action Button (FAB) bottom right in Crimson.",
+    "New_Project_Wizard": "Step indicator at top (1. Script -> 2. Style -> 3. Voice -> 4. Review). Script uses large multi-line input. Style picker uses 2-column grid of image cards; selected state has a 2px Crimson border and small check icon. Voice picker uses list items with play buttons.",
+    "Pipeline_Progress": "The 'Control Room'. Vertical timeline. 4 nodes: Parse -> Audio -> Art -> Video. Active node pulses with an inner glow. Include a dark console box (JetBrains Mono font, 12px) showing mock AI processing logs streaming in. Preview thumbnails appear inside the node once a module completes.",
+    "Scene_Breakdown": "Horizontal ScrollView of 'Scene Cards'. Each card is 80vw wide. Top half is the generated background/character art. Bottom half contains the Dialogue and Mood tags. Background of the view should be completely black (#000000) to isolate the scenes.",
+    "Video_Player": "Edge-to-edge video component. Custom overlay controls (Play/Pause/Scrub). Below the video, a sleek 'Export & Share' bento box with quick action buttons. Hide status bar if possible.",
+    "Media_Converter": "Toolbox UI. Tabbed top nav (Format, Trim, Crop). Aspect ratio picker must show literal geometric rectangles (16:9 wide, 9:16 tall) for selection. Sliders for trim must look technical, like a professional Non-Linear Editor (NLE)."
+  },
+  "icons": {
+    "library": "lucide-react-native",
+    "stroke_width": 1.5,
+    "instructions": "Use thin, sharp icons. Do not fill icons unless it represents an active state in the bottom tab."
+  },
+  "media_urls": {
+    "splash_bg": {
+      "url": "https://images.unsplash.com/photo-1774392795592-a1302faf1118?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxkYXJrJTIwZ3JhZGllbnQlMjBhYnN0cmFjdHxlbnwwfHx8fDE3Nzc5MjU0OTd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract dark center with soft pink edges, use for Auth/Splash screen background"
+    },
+    "avatar": {
+      "url": "https://images.unsplash.com/photo-1568299273577-64c090fb8354?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwyfHxjcmVhdGl2ZSUyMHBlcnNvbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NzkyNTQ4NHww&ixlib=rb-4.1.0&q=85",
+      "description": "User profile avatar for dashboard header"
+    },
+    "style_anime": {
+      "url": "https://images.pexels.com/photos/15971283/pexels-photo-15971283.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Anime style thumbnail for Wizard step 2"
+    },
+    "style_comic": {
+      "url": "https://images.pexels.com/photos/6654172/pexels-photo-6654172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Comic book style thumbnail for Wizard step 2"
+    },
+    "style_vintage": {
+      "url": "https://images.pexels.com/photos/34069005/pexels-photo-34069005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Vintage/Retro style thumbnail for Wizard step 2"
+    }
+  },
+  "testing": {
+    "attribute": "testID",
+    "instructions": "All interactive elements (TouchableOpacity, Pressable, TextInput) MUST include a 'testID' prop. Use kebab-case and role-based naming (e.g., testID='login-submit-button', testID='new-project-fab')."
+  }
+}

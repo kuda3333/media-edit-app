@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      MONGO_URL: mongodb://mongo:27017
+      DB_NAME: animation_studio
+      JWT_SECRET: ${JWT_SECRET:-change_me_in_production}
+      WORKSPACE_DIR: /app/workspace
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@example.com}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+    volumes:
+      - workspace_data:/app/workspace
+    ports:
+      - "8000:8000"
+
+volumes:
+  mongo_data:
+  workspace_data:
